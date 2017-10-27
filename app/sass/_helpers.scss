@@ -1,0 +1,9 @@
+
+//helpers
+
+// placeholder example
+.bright-color-placeholder {
+	@include placeholder {
+		color: #ccc;
+	}
+}

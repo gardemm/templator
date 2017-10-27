@@ -1,0 +1,46 @@
+
+    <!-- VENDOR -->
+    <script type="text/javascript" src="vendor/jquery.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/custom/custom.js"></script>
+
+
+
+
+    <!-- MODAL SEND EXAMPLE -->
+    <!-- TODO gulp gzip -->
+    <script type="text/javascript">
+        $("#form-modal-button").click(function() {
+            $.ajax({
+                type: "POST",
+                url: "form.php",
+                data: $('#modal-form').serialize(),
+                success: function(msg){
+                    // обработка ошибок
+                    if(msg.field === 'phone') {
+                        var field = $('#modal-form .phone').addClass('error');
+                        field.addClass('error');
+                        field.attr("placeholder", "* Телефон").val("").focus().blur();
+                    } else {
+                        // редирект на благодарности
+                        window.location.href = "thanks.html";
+
+                        // OR
+
+                        // TODO #succes-modal => show
+                        // TODO #form-modal => hide
+                    }
+                },
+                error: function(data){
+                    alert("Ошибка :( Повторите пожалуйста через 5 минут.");
+                }
+            });
+            return false;
+        });
+    </script>
+
+    <!-- TODO -->
+	<!-- Yandex.Metrika counter -->
+	<!-- Google Map -->
+    <!-- GOOGle analitics -->

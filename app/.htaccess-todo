@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+
+#RewriteEngine On
+#RewriteCond %{HTTP_REFERER} !^$
+#RewriteCond %{HTTP_REFERER} !^http://([ -a-z0-9] \.)?mysite\.ru [NC]
+#RewriteRule \.(gif|jpe?g|png)$ - [F,NC,L]
+
+Options -Indexes
+
+
+Redirect 301 /(.*)$ http://mysite.ru/
