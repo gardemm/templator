@@ -3,5 +3,5 @@ node_modules/
 public
 .DS_Store
 .idea
-.package-lock.json
+package-lock.json
 app/css/custom.css
